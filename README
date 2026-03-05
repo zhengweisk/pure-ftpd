@@ -2,6 +2,16 @@
 里面有配置文件示范和启动脚本！
 后来的版本没有了。导致启动服务非常麻烦，不能直接使用conf文件！
 
+```bash
+（./configure --help可看到所有的参数，依照实际情況來加）
+aptitude install libssl-dev
+./configure --with-tls --with-diraliases --with-altlog --with-sysquotas -with-quotas --with-throttling --with-ratios --with-ftpwho --with-rfc2640
+make install-strip
+cd configuration-file
+perl pure-config.pl pure-ftpd.conf (启动服务)
+服务重启前先 pkill pure-ftpd (将process刪除) 之后再启动
+
+```
 
                               .:. PURE-FTPD .:.
                       Documentation for version 1.0.52
